@@ -1,0 +1,342 @@
+body{
+    background-image: url("/images/lightMode.jpg");
+    font-family: Montserrat;
+}
+
+h3{
+    position: relative;
+    left: 469px;
+    top: 12px;
+}
+
+div.product-data{
+    background-color: #D3D3D3; 
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.2), 0 6px 28px 0 rgba(0,0,0,0.19); 
+    opacity: 93%; 
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 60px 30px; 
+    position: relative;
+    width: 1200px;
+    height: 570px;  
+}
+
+
+label{
+    margin: 0 10px 0 0;
+    font-weight: 570;
+}
+
+.hide{
+    display: none;
+}
+
+.input-line{
+    background: transparent;
+    border: none; 
+    border-bottom: 2px solid silver;
+    outline: none;
+    width: 150px;
+    font-size: 18px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.input-line:hover{
+    border-color: #787a75;
+    transition: 0.7s;
+}
+
+input.price, input.edit-quantity, input.add-quantity{
+    width: 120px;
+}
+
+
+.product-label{
+    display: block;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 10px;
+    margin: 15px;
+}
+
+p{
+    display: inline;
+}
+
+.p1{
+    margin-top: 80px;
+    margin-left: 410px;
+    
+}
+
+.p2{
+    margin-left: 312px;
+}
+
+.p3{
+    margin-left: 358.2px;
+    
+}
+
+.p4{
+    margin-left: 323px;  
+}
+
+.p5{
+    margin-left: 403px;  
+}
+
+.para-text{
+    font-size:17px;
+    padding-left: 2px;
+}
+
+
+i{
+    cursor: pointer;
+    font-size: 15px;
+    margin: 0 5px;
+    color: #5f635b;
+}
+
+i:hover{
+    transform: scale(1.2);
+    color: #323431;
+}
+
+i.fa-arrow-left-long:hover{
+    transform: none;
+    color: #323431;
+}
+
+i.fa-arrow-trend-up{
+    all: none;
+    display: inline;
+    left: 420px;
+    top: 64px;
+    color: black;
+    font-size: 47px;
+    position: absolute;
+    animation: wheelHueColor 10s infinite;
+/*    color: hsl(324, 70%, 45%);*/
+    text-shadow: 0 0 10px gray;
+}
+
+@keyframes wheelHueColor {
+    0%   { color: hsl(120, 100%, 50%); } /* Pure Green */
+    10%  { color: hsl(110, 80%, 50%); } /* Slightly darker green */
+    20%  { color: hsl(100, 90%, 40%); } /* Deep green */
+    30%  { color: hsl(90, 70%, 35%); }  /* Darker green */
+    40%  { color: hsl(60, 50%, 30%); }  /* Dull green */
+    50%  { color: hsl(0, 60%, 40%); }   /* Light red */
+    60%  { color: hsl(0, 80%, 45%); }   /* Brighter red */
+    70%  { color: hsl(0, 100%, 50%); }  /* Pure red */
+    80%  { color: hsl(0, 90%, 40%); }   /* Deep red */
+    90%  { color: hsl(0, 70%, 35%); }   /* Darker red */
+    100% { color: hsl(120, 100%, 50%); } /* Back to Pure Green */
+}
+
+.fa-calendar-days{
+    font-size: 24px;
+    text-shadow: 0 0 10px #CF9FFF;
+}
+
+.fa-calendar{
+    font-size: 24px;
+    text-shadow: 0 0 10px #00930c;
+}
+
+.fa-boxes-packing{
+    font-size: 24px;
+    text-shadow: 0 0 10px #ddc511;
+}
+
+.fa-basket-shopping{
+    font-size: 24px;
+    text-shadow: 0 0 10px #698efb;
+}
+
+.fa-arrow-left-long{
+    font-size: 22px;
+    padding-top: 2px;
+}
+
+.fa-arrow-trend-down{
+    font-size: 24px;
+    text-shadow: 0 0 10px #DC143C;
+}
+
+.search-box{
+    text-align: center;
+    margin: 100px auto 10px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 100px;
+    height: 100%;
+}
+
+.search-bar{
+    width:350px;
+    height: 45px;
+    border: none;
+    outline: none;
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.2), 0 6px 28px 0 rgba(0,0,0,0.19); 
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 0 13px;
+}
+
+.search-btn{
+    width: 80px;
+    height: 45px;
+    border: none;
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.2), 0 6px 28px 0 rgba(0,0,0,0.19); 
+    color: white;
+    border-radius: 7px;
+    background-color: #007bff;
+    font-weight: 600;
+    padding: 5px;
+}
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.back-btn{
+    width: 50px;
+    height: 50px;
+    border: none;
+/*    position: absolute;*/
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 50%;
+    position: fixed;
+    left: 20px;
+    top: 30px;
+
+}
+
+.back-btn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sub-btn{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    position: absolute;
+    background-color: platinum;
+    left: 520px;
+    top:460px;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: 570;
+    border: none;
+}
+
+.sub-btn:hover{
+    background-color: #E5E4E2;
+}
+
+    
+.notification{
+      text-align: center;
+      font-size: 18px;
+      font-weight: 550;
+      position: absolute;
+      color: #444C38;
+      top: 5%; 
+      right: -160px;
+      height: 50px;
+      width: 250px;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #FAF9F6;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      animation: moveFromRightToLeft 0.7s linear forwards; 
+      overflow: hidden;
+
+}
+
+
+@keyframes moveFromRightToLeft {
+      0% {
+        transform: translateX(100%); /* Start off the screen to the right */
+      }
+      100% {
+        transform: translateX(-10vw); /* Move off the screen to the left */
+      }
+}
+
+
+.sidebar-popup::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 8%;
+            background: #00AB66;
+            animation: line-animate 2.5s linear ;           
+        }
+
+@keyframes line-animate {
+    0% {
+            right: 10%;
+       }
+
+    100% {
+            right: 100%;
+        }
+}        
+
+.suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+            background-color: #E5E4E2;
+            width: 71.9%;
+            border-radius: 2px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            font-weight: 500;
+            position: relative;
+            left: 33.4px;
+            text-align: left;
+            z-index: 1;
+
+        }
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        } 
+
+#suggestions{
+  width: 35.5%;
+   position: absolute;
+  }
+
+.location-p{
+    display: inline;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.location-div{
+    display: inline;
+}
+
+.location{
+/*    display: inline;*/
+    width: 70px;
+}
+
+.floor{
+    margin: 10px 0 0 150px;
+}
+.row{
+    position: absolute;
+    top: 63px;
+    left: 250px;
+}
+.shelf{
+    position: absolute;
+    top: 63px;
+    left: 339px;
+}
