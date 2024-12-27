@@ -1,0 +1,113 @@
+<%- include("header") -%>
+<!-- <body> -->
+<div id="main" class="">
+    <nav class="navbar navbar-expand-lg bg-body-primary fixed-top ">
+        <div class="container-fluid">
+            <button class="navbar-brand home-btn btn-outline-dark" type="button" title="home"><i class="fa-solid fa-house "></i></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <button type="button" class="btn btn-outline-dark" onclick="redirectToAdmin()">Admin Login</button> </div>
+        </div>
+    </nav>
+    <div class="iloc-logo">
+        <i class="fa-solid fa-info  fa-4x fa-logo-i fa-logo"></i>
+        <i class="fa-solid fa-l fa-4x fa-logo-L"></i>
+        <i class="fa-brands fa-opera fa-3x"></i>
+        <i class="fa-solid fa-c fa-3x"></i>
+        <i class="fa-solid fa-cart-arrow-down fa-3x fa-logo1"></i>
+    </div>
+    <div class="search-box">
+        <form action="/search" method="post">
+            <input type="text" name="searchProduct" id="search-box" placeholder="Search for items..." required autocomplete="off">
+            <input type="submit" value="Search">
+            <div id="suggestions" class="sug"></div>
+        </form>
+    </div>
+
+    <div class="search-div">
+        <% let i=0 %>
+        <% searchList.forEach(function(searchList){ %>
+        <form  class="search-list" action="/deleteSearchedProduct" method="post">
+            <div class="search-item" >
+             <tr>   
+            <td><p><%= searchList[0]%> => Floor:<%= searchList[1]%> Row:<%= searchList[2]%> Column:<%= searchList[3]%></p></td>
+            <td><input type="checkbox" name="checkbox" value="<%= i %>" onchange="this.form.submit()">
+        </tr></td>
+            </div>
+            <input type="hidden" name="productName" value="<%= searchList[0] %>">
+        </form>
+        <% i+=1; })%>
+    </div>
+</div>
+<div id="map-container"></div>
+
+  <!-- Popup -->
+<div id="popup" class="popup"></div>
+
+<script>
+        $(document).ready(function () {
+
+            $('#search-box').on('input', function () {
+                const query = $(this).val();
+
+                if (query.length > 0) {
+                    // Fetch suggestions from the server
+                    $.getJSON('/searchrec', { q: query }, function (data) {
+                        const suggestions = $('#suggestions');
+                        suggestions.empty(); // Clear previous suggestions
+
+                        data.forEach(item => {
+                            const suggestionItem = $('<div>')
+                                .addClass('suggestion-item')
+                                .text(item)
+                                .on('click', function () {
+                                    $('#search-box').val(item); // Set the clicked suggestion in the search box
+                                    suggestions.empty(); // Clear suggestions
+                                    // console.log(item);
+                                    // $.post('/search', { searchProduct: item })
+                                    // .done((response) => {
+                                    //     console.log('Success:', response);
+                                    // })
+                                    // .fail((xhr, status, error) => {
+                                    //     console.log('Error:', status, error);
+                                    // });
+                                });
+                            suggestions.append(suggestionItem);
+                        });
+                    });
+                } else {
+                    $('#suggestions').empty(); // Clear suggestions if query is empty
+                }
+            });
+
+            // Hide suggestions when clicking outside
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('#search-box, #suggestions').length) {
+                    $('#suggestions').empty();
+                }
+            });
+        });
+</script>
+    
+
+<script type="text/javascript" src="/js/map.js" ></script>
+    <script type="text/javascript">
+        productList=[];
+        <%i=0 %>
+        <% searchList.forEach(function(searchList){ %>
+         productList.push('<%=searchList[0]%>')
+        <% i+=1; })%>
+       if(productList.length===0){
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.style.display = "none";
+       }else{
+            navigate(productList);
+       }
+        
+    </script>
+
+
+<!-- </body> -->
+<%- include("footer") -%>
