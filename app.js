@@ -382,24 +382,21 @@ app.post('/stockAnalysisSearch', async function (req, res) {
 });
 
 
-app.get('/',function(req,res){
-	//res.sendFile(__dirname+'/index.html');
-	res.sendFile(path.join(__dirname, '../frontend/index.html'));
-})
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
 
-app.get('/adminLogin',function(req,res){
-	res.render('adminLogin',{loginsuccess:-1});;
-})
+app.get('/adminLogin', function (req, res) {
+    res.render('adminLogin', { loginsuccess: -1 });
+});
 
-app.get('/adminHome',function(req,res){
-	//res.sendFile(__dirname+'/adminHome.html');
-	res.sendFile(path.join(__dirname, '../frontend/adminHome.html'));
-})
+app.get('/adminHome', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend', 'adminHome.html'));
+});
 
-app.post('/adminHome',function(req,res){
-	//res.sendFile(__dirname+'/adminHome.html');
-	res.sendFile(path.join(__dirname, '../frontend/adminHome.html'));
-})
+app.post('/adminHome', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend', 'adminHome.html'));
+});
 
 app.get('/addProduct',function(req,res){
 	res.render('addProduct',{stockAdded:0});
