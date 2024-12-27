@@ -2,7 +2,7 @@
 ilocLogoTransform()
 
 function redirectToAdmin() {
-    window.location.href = "/AdminLogin";  
+    window.location.href = "/adminLogin.html";  
 }
 
 function redirectToAdminHome(){

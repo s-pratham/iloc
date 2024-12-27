@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="public/css/index.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Home</title>
 </head>
@@ -62,14 +62,8 @@
     </div>
     
     <!-- Include custom JS -->
-    <script src="/js/index.js"></script>
+    <script src="public/js/index.js"></script>
     <script>
-        // Function to redirect to Admin Login
-        function redirectToAdmin() {
-            window.location.href = '/adminLogin';
-        }
-
-        // Function to handle search box input and suggestions
         $(document).ready(function () {
             $('#search-box').on('input', function () {
                 const query = $(this).val();
