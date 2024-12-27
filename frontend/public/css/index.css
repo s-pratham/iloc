@@ -83,7 +83,7 @@ input[type="submit"]:hover {
 
 
 body {
-    background-image: url('/images/lightMode.jpg');
+    background-image: url('../images/lightMode.jpg');
     font-family: Montserrat;
     font-weight: 300;
     margin: 20px;
