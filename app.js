@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static("../Frontend/public"));  
+app.use(express.static("../frontend/public"));  
 
 app.set('view engine','ejs');
 
