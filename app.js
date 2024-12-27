@@ -7,7 +7,17 @@ const path = require('path');
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static("../frontend/public"));  
+app.use(express.static(path.join(__dirname, 'frontend')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 app.set('view engine','ejs');
 
