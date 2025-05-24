@@ -346,7 +346,7 @@ app.post('/stockAnalysisSearch', async function (req, res) {
 
         // Call the Flask backend for predictions
         const axios = require('axios'); // Import axios for making API calls
-        const flaskURL = 'https://b47b-116-73-230-87.ngrok-free.app/predict'; // Flask backend URL
+        const flaskURL = 'https://f73d-2409-40c2-c-f5db-c08a-b772-1951-e195.ngrok-free.app/predict'; // Flask backend URL
         
         const predictionResponse = await axios.post(flaskURL, {
             item: id // Send item ID to the Flask backend
